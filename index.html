@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOOD Fried Chicken &amp; Burger | اطلب أونلاين</title>
+<meta name="description" content="منيو MOOD Fried Chicken & Burger في حلوان — اختار من المنيو والطلب يوصل للمطعم رسالة واتساب جاهزة.">
+<meta property="og:title" content="MOOD Fried Chicken & Burger">
+<meta property="og:description" content="اطلب من منيو MOOD في حلوان — الطلب يوصل واتساب للمطعم.">
+<meta property="og:image" content="">
+<link rel="icon" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page: #f6f1ec;
+  --card: #ffffff;
+  --ink: #221a15;
+  --ink2: #7d7369;
+  --hairline: #e8e0d8;
+  --red: #e4002b;
+  --yellow: #f5b800;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+.card {
+  max-width: 640px;
+  margin: 32px auto 64px;
+  background: var(--card);
+  border-radius: 24px;
+  padding: 28px 22px 32px;
+  box-shadow: 0 1px 2px rgba(34, 26, 21, 0.05), 0 12px 40px rgba(34, 26, 21, 0.06);
+}
+.hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 4px 0 18px; border-bottom: 1px solid var(--hairline); }
+.hero img { width: 210px; height: auto; }
+.hero .meta { margin: 10px 0 0; font-size: 12.5px; color: var(--ink2); }
+.chips { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 8px; padding: 14px 0 2px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: 0 0 auto; font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); background: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 8px 16px; min-height: 40px; cursor: pointer; }
+.chip-cart { color: var(--red); border-color: var(--red); margin-inline-start: auto; }
+.group { margin-top: 28px; }
+.group-label { font-size: 11px; font-weight: 700; color: var(--ink2); letter-spacing: 0.14em; }
+.group-heading { font-size: 22px; font-weight: 800; margin: 2px 0 12px; }
+.offers { display: flex; flex-direction: column; gap: 20px; }
+.offer { border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden; }
+.offer img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.offer-body { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; }
+.item-info { flex: 1 1 auto; min-width: 0; }
+.item-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.item-name { font-size: 14px; font-weight: 700; }
+.item-detail { font-size: 12px; color: var(--ink2); margin-top: 2px; }
+.item-price { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.items { display: flex; flex-direction: column; }
+.item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--hairline); }
+.item:last-child { border-bottom: none; }
+.item-action { flex: 0 0 auto; }
+.add { font: inherit; font-size: 13px; font-weight: 700; color: var(--red); background: none; border: 1px solid var(--red); border-radius: 999px; padding: 8px 16px; min-height: 40px; cursor: pointer; white-space: nowrap; }
+.add:active { background: rgba(228, 0, 43, 0.08); }
+.variants { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.variant-active { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.variant-label { font-size: 11px; font-weight: 600; color: var(--ink2); }
+.stepper { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--red); border-radius: 999px; padding: 2px; }
+.stepper button { width: 32px; height: 32px; border: none; background: none; font: inherit; font-size: 18px; font-weight: 700; color: var(--red); cursor: pointer; border-radius: 999px; line-height: 1; }
+.stepper button:active { background: rgba(228, 0, 43, 0.1); }
+.stepper span { min-width: 24px; text-align: center; font-size: 14px; font-weight: 700; }
+.cartlines { display: flex; flex-direction: column; gap: 16px; }
+.cartline { border-bottom: 1px solid var(--hairline); padding-bottom: 14px; }
+.cartline:last-child { border-bottom: none; padding-bottom: 0; }
+.cartline-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.field { margin-bottom: 12px; }
+.field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink2); margin-bottom: 6px; }
+.field input { width: 100%; font: inherit; font-size: 14px; padding: 10px 14px; border: 1px solid var(--hairline); border-radius: 12px; background: #fff; color: var(--ink); }
+.field input:focus { outline: 2px solid rgba(228, 0, 43, 0.35); border-color: var(--red); }
+.choice { display: flex; gap: 0; border: 1px solid var(--hairline); border-radius: 999px; overflow: hidden; margin-bottom: 14px; }
+.choice button { flex: 1; font: inherit; font-size: 13.5px; font-weight: 700; padding: 10px; background: none; border: none; cursor: pointer; color: var(--ink2); min-height: 44px; }
+.choice button.on { background: var(--ink); color: #fff; }
+.totals { border-top: 1px solid var(--hairline); margin-top: 16px; padding-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.totals[hidden] { display: none; }
+.total-row { display: flex; justify-content: space-between; font-size: 14px; color: var(--ink2); }
+.total-grand { font-size: 17px; font-weight: 800; color: var(--red); margin-top: 4px; }
+.order { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+.btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-size: 15px; font-weight: 800; color: #fff; background: var(--red); border: none; border-radius: 999px; padding: 14px 20px; min-height: 52px; cursor: pointer; text-decoration: none; text-align: center; }
+.btn-primary:active { filter: brightness(0.92); }
+.btn-primary[disabled] { background: #c9c0b7; cursor: not-allowed; }
+.caption { font-size: 12px; color: var(--ink2); text-align: center; margin: 0; }
+.btn-ghost { font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); background: none; border: none; cursor: pointer; padding: 6px; }
+.preview { margin: 0; padding: 12px; border: 1px solid var(--hairline); border-radius: 10px; font-family: inherit; font-size: 13px; line-height: 1.8; white-space: pre-wrap; width: 100%; }
+.facts { display: flex; flex-direction: column; }
+.fact { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--hairline); font-size: 14px; }
+.fact:last-child { border-bottom: none; }
+.fact .k { color: var(--ink2); font-weight: 600; flex: 0 0 auto; }
+.fact .v { text-align: left; font-weight: 600; }
+.closing { margin-top: 28px; text-align: center; font-size: 12px; color: var(--ink2); }
+.empty { color: var(--ink2); font-size: 14px; margin: 0; }
+@media (min-width: 768px) {
+  .card { padding: 36px 32px 40px; }
+  .offers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hero img { width: 250px; }
+}
+@media (max-width: 480px) {
+  .card { margin: 0 auto 40px; border-radius: 0 0 24px 24px; }
+}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="hero">
+    <img id="hero-logo" src="" alt="MOOD Fried Chicken & Burger">
+    <p class="meta">٥٨ شارع شريف، حلوان · دليفري: <bdi dir="ltr">01111118186</bdi></p>
+  </div>
+
+  <nav class="chips" id="chips" aria-label="أقسام المنيو"></nav>
+
+  <div id="offers-section">
+    <section class="group" id="mat-offers">
+      <div class="group-label">MOOD</div>
+      <h2 class="group-heading">العروض</h2>
+      <div class="offers" id="offers"></div>
+    </section>
+  </div>
+
+  <div id="menu-sections"></div>
+
+  <div id="mat-cart">
+    <section class="group">
+      <div class="group-label">طلبك</div>
+      <h2 class="group-heading">سلة الطلب</h2>
+      <div id="cart-body"></div>
+    </section>
+
+    <section class="group">
+      <div class="group-label">الخطوة الأخيرة</div>
+      <h2 class="group-heading">بيانات الطلب</h2>
+      <div class="choice" id="method">
+        <button type="button" data-v="delivery" class="on">توصيل</button>
+        <button type="button" data-v="pickup">استلام من المطعم</button>
+      </div>
+      <div class="field"><label for="f-name">الاسم</label><input id="f-name" type="text" autocomplete="name"></div>
+      <div class="field"><label for="f-phone">الموبايل</label><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr"></div>
+      <div class="field" id="f-address-wrap"><label for="f-address">العنوان بالتفصيل</label><input id="f-address" type="text" autocomplete="street-address"></div>
+      <div class="totals" id="totals" hidden>
+        <div class="total-row"><span>إجمالي الأصناف</span><span id="t-sub"></span></div>
+        <div class="total-row" id="t-fee-row"><span>رسوم التوصيل</span><span id="t-fee"></span></div>
+        <div class="total-row total-grand"><span>الإجمالي</span><span id="t-total"></span></div>
+      </div>
+      <div class="order">
+        <a class="btn-primary" id="order-btn" href="#" target="_blank" rel="noopener">ابعت الطلب على واتساب ↗</a>
+        <p class="caption">الزرار هيفتح واتساب برسالة فيها كل تفاصيل الطلب — دوس إرسال بس، والطلب بيوصل للمطعم على <bdi dir="ltr">01111118186</bdi>.</p>
+        <button class="btn-ghost" id="preview-toggle" type="button" hidden>شوف نص الرسالة</button>
+        <pre class="preview" id="preview" dir="rtl" hidden></pre>
+      </div>
+    </section>
+  </div>
+
+  <section class="group">
+    <div class="group-label">MOOD FRIED CHICKEN &amp; BURGER</div>
+    <h2 class="group-heading">العنوان والتواصل</h2>
+    <div class="facts">
+      <div class="fact"><span class="k">العنوان</span><span class="v">٥٨ شارع شريف، حلوان</span></div>
+      <div class="fact"><span class="k">دليفري</span><span class="v"><bdi dir="ltr">01111118186</bdi></span></div>
+      <div class="fact"><span class="k">فيسبوك</span><span class="v" dir="ltr">MOOD FRIEDCHICKEN &amp; BURGER</span></div>
+      <div class="fact"><span class="k">انستجرام</span><span class="v" dir="ltr">MOOD FRIEDCHICKEN</span></div>
+    </div>
+  </section>
+
+  <p class="closing">الأسعار من منيو MOOD · الطلب بيوصل رسالة واتساب جاهزة على رقم المطعم.</p>
+</main>
+
+<script src="photos-mood-logo.js"></script>
+<script src="photos-offer1.js"></script>
+<script src="photos-offer2.js"></script>
+<script src="photos-offer3.js"></script>
+<script src="photos-offer4.js"></script>
+<script src="photos-offer5.js"></script>
+<script>
+const WHATSAPP_NUMBER = '201111118186';
+const DELIVERY_FEE = 25;
+const MENU = [{"id":"snack","category":"وجبات الفرايد تشيكن","name":"سناك بوكس","detail":"٢ قطعة فرايد تشيكن، خبز، بطاطس، كاتشب","price":155},{"id":"dinner","category":"وجبات الفرايد تشيكن","name":"دينر بوكس","detail":"٣ قطع فرايد تشيكن، ٢ خبز، بطاطس، كاتشب","price":220},{"id":"couples","category":"وجبات الفرايد تشيكن","name":"كابلز بوكس","detail":"٦ قطع فرايد تشيكن، ٣ خبز، بطاطس كبير، كاتشب","price":410},{"id":"share","category":"وجبات الفرايد تشيكن","name":"شير بوكس","detail":"٩ قطع فرايد تشيكن، ٤ خبز، بطاطس كبير، كاتشب، صوص شيدر صغير","price":560},{"id":"family","category":"وجبات الفرايد تشيكن","name":"فاميلي بوكس","detail":"١٢ قطعة فرايد تشيكن، ٦ خبز، بطاطس كبير، كاتشب، صوص شيدر كبير","price":720},{"id":"mega","category":"وجبات الفرايد تشيكن","name":"ميجا بوكس","detail":"١٥ قطعة فرايد تشيكن، ٨ خبز، بطاطس كبير، كاتشب، صوص شيدر كبير","price":870},{"id":"strips-single","category":"وجبات الاستربس","name":"سنجل استربس","detail":"٣ قطع استربس، خبز، بطاطس، كاتشب","price":190},{"id":"strips","category":"وجبات الاستربس","name":"استربس","detail":"٣ قطع استربس، رز مبهر كبير، بطاطس، كاتشب","price":220},{"id":"mood-mix","category":"وجبات الاستربس","name":"مود ميكس","detail":"٢ قطعة فرايد تشيكن + ٢ قطعة استربس، رز مبهر، بطاطس، كاتشب","price":300},{"id":"trio-mix","category":"وجبات الاستربس","name":"تريو ميكس","detail":"٣ قطع فرايد تشيكن + ٣ قطع استربس، ٣ خبز، بطاطس كبير، كاتشب","price":370},{"id":"nashville-sand","category":"ناشفيل سبايسي","name":"ساندوتش ناشفل تشيكن","detail":"صدور دجاج مقلية بطريقة الناشفل، شيدر، مايونيز، طماطم، خس، خيار مخلل، صوص الناشفل","price":160},{"id":"nashville-strips","category":"ناشفيل سبايسي","name":"ناشفل استربس","detail":"٣ قطع ناشفل استربس، رز مبهر كبير، بطاطس، صوص الناشفل، كاتشب","price":230},{"id":"mood-chicken","category":"ساندوتشات الفراخ","name":"مود تشيكن","detail":"صدور دجاج مقلية، شريحة شيدر، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص شيدر","variants":[{"label":"سنجل","price":155},{"label":"دبل","price":255}]},{"id":"mushroom-chicken","category":"ساندوتشات الفراخ","name":"مشروم تشيكن","detail":"صدور دجاج مقلية، قطع مشروم، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص تكساس","variants":[{"label":"سنجل","price":155},{"label":"دبل","price":255}]},{"id":"smoky-chicken","category":"ساندوتشات الفراخ","name":"سموكي تشيكن","detail":"صدور دجاج مقلية، تركي مدخن، حلقات بصل مقلية، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص باربيكيو","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"ranch-chicken","category":"ساندوتشات الفراخ","name":"رانش تشيكن","detail":"صدور دجاج مقلية، بيف مدخن، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص الرانش","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"fire-chicken","category":"ساندوتشات الفراخ","name":"فاير تشيكن","detail":"صدور دجاج مقلية، شرايح فلفل هالوبينو، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص فاير حار","variants":[{"label":"سنجل","price":155},{"label":"دبل","price":255}]},{"id":"mozzarella-chicken","category":"ساندوتشات الفراخ","name":"موتزريلا تشيكن","detail":"صدور دجاج مقلية، ٢ أصابع موتزاريلا، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص ثاوزند ايلاند","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"mood-burger","category":"برجر بيف","name":"مود برجر","detail":"برجر لحم بقري، شريحة شيدر، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص شيدر","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"mushroom-burger","category":"برجر بيف","name":"مشروم برجر","detail":"برجر لحم بقري، مشروم، بصل مكرمل، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص تكساس","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"smoky-burger","category":"برجر بيف","name":"سموكي برجر","detail":"برجر لحم بقري، تركي مدخن، حلقات بصل مقلية، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص باربيكيو","variants":[{"label":"سنجل","price":165},{"label":"دبل","price":265}]},{"id":"bbq-burger","category":"برجر بيف","name":"باربيكيو برجر","detail":"برجر لحم بقري، بيف مدخن، حلقات بصل فريش، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص باربيكيو","variants":[{"label":"سنجل","price":165},{"label":"دبل","price":265}]},{"id":"fire-burger","category":"برجر بيف","name":"فاير برجر","detail":"برجر لحم بقري، شرايح فلفل هالوبينو، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص فاير حار","variants":[{"label":"سنجل","price":160},{"label":"دبل","price":260}]},{"id":"mozzarella-burger","category":"برجر بيف","name":"موتزريلا برجر","detail":"برجر لحم بقري، ٢ أصابع موتزاريلا، مايونيز، كابوتشا، طماطم، خيار مخلل، صوص ثاوزند ايلاند","variants":[{"label":"سنجل","price":170},{"label":"دبل","price":270}]},{"id":"mood-pasta","category":"باستا","name":"مود باستا","detail":"مكرونة وايت صوص وقطع الدجاج المقلية، صوص شيدر","price":135},{"id":"mood-pasta-moz","category":"باستا","name":"مود باستا بالموتزريلا","detail":"مكرونة وايت صوص بقطع الدجاج المقلية وطبقة موتزريلا","price":150},{"id":"fajita-pasta","category":"باستا","name":"فاهيتا باستا","detail":"مكرونة وايت صوص بقطع فاهيتا الدجاج، مشروم، فلفل","price":130},{"id":"negresco","category":"باستا","name":"تشيكن نجرسكو","detail":"مكرونة وايت صوص بفاهيتا الدجاج وطبقة موتزريلا، فلفل، مشروم، زيتون","price":160},{"id":"mood-rizo","category":"ريزو وأرز","name":"مود ريزو","detail":"رز مبهر، قطع الدجاج المقلية، صوص باربيكيو","price":120},{"id":"rizo-hotdog","category":"ريزو وأرز","name":"ريزو هوت دوج","detail":"رز مبهر، قطع هوت دوج، فلفل، بصل، مشروم، مايونيز","price":110},{"id":"rizo-fajita","category":"ريزو وأرز","name":"ريزو فاهيتا","detail":"رز مبهر، فاهيتا الدجاج، فلفل، بصل، مشروم، مايونيز","price":120},{"id":"rice","category":"ريزو وأرز","name":"رز مبهر ساده","detail":"صغير ١٢٥ جرام · كبير ٢٥٠ جرام","variants":[{"label":"صغير","price":40},{"label":"كبير","price":60}]},{"id":"spiderman","category":"وجبات الأطفال","name":"سبايدرمان","detail":"ساندوتش ميني تشيكن، بطاطس، عصير، لعبة أطفال، كاتشب","variants":[{"label":"ساندوتش","price":110},{"label":"وجبة","price":160}]},{"id":"hulk","category":"وجبات الأطفال","name":"هالك","detail":"ساندوتش ميني بيف برجر، بطاطس، عصير، لعبة أطفال، كاتشب","variants":[{"label":"ساندوتش","price":115},{"label":"وجبة","price":160}]},{"id":"barbie","category":"وجبات الأطفال","name":"باربي","detail":"٢ قطعة استربس، خبز، بطاطس، عصير، لعبة أطفال، كاتشب","variants":[{"label":"ساندوتش","price":160},{"label":"وجبة","price":160}]},{"id":"spongebob","category":"وجبات الأطفال","name":"سبونج بوب","detail":"قطعة ديوس، خبز، بطاطس، عصير، لعبة أطفال، كاتشب","price":155},{"id":"fries-pack","category":"بطاطس وإضافات","name":"باكت بطاطس","price":40},{"id":"fries-large","category":"بطاطس وإضافات","name":"بطاطس لارج","price":75},{"id":"fries-cheddar","category":"بطاطس وإضافات","name":"بطاطس شيدر","price":80},{"id":"fries-jalapeno","category":"بطاطس وإضافات","name":"بطاطس شيدر هالوبينو","price":85},{"id":"fries-moz","category":"بطاطس وإضافات","name":"بطاطس موتزريلا","price":90},{"id":"fries-moz-chicken","category":"بطاطس وإضافات","name":"بطاطس موتزريلا تشيكن","price":115},{"id":"onion-rings","category":"بطاطس وإضافات","name":"حلقات بصل مقلية","detail":"٥ قطع","price":60},{"id":"moz-sticks","category":"بطاطس وإضافات","name":"أصابع موتزاريلا","detail":"٣ قطع","price":60},{"id":"coleslaw","category":"بطاطس وإضافات","name":"كول سلو","variants":[{"label":"صغير","price":20},{"label":"كبير","price":65}]},{"id":"sauces","category":"بطاطس وإضافات","name":"صوصات","variants":[{"label":"صغير","price":20},{"label":"كبير","price":65}]},{"id":"extra-ketchup","category":"بطاطس وإضافات","name":"إضافة كاتشب","price":25},{"id":"water","category":"بطاطس وإضافات","name":"مياه","price":15}];
+const OFFERS = [{"id":"offer1","name":"أوفر 1","detail":"٢ قطعة فرايد تشيكن + خبز + بطاطس + رز صغير + كولا","price":200,"photo":"offer1.jpg"},{"id":"offer2","name":"أوفر 2","detail":"٤ قطع فرايد تشيكن + ٢ بطاطس + ٤ خبز + صوص شيدر","price":310,"photo":"offer2.jpg"},{"id":"offer3","name":"أوفر 3","detail":"٢ مود تشيكن + ٢ بطاطس","price":360,"photo":"offer3.jpg"},{"id":"offer4","name":"أوفر 4","detail":"٨ قطع فرايد تشيكن + بطاطس كبير + ٤ خبز + ٢ رز كبير + كول سلو + صوص شيدر","price":595,"photo":"offer4.jpg"},{"id":"offer5","name":"أوفر 5","detail":"مشروم برجر + رانش تشيكن + ٢ بطاطس","price":375,"photo":"offer5.jpg"}];
+const CATEGORIES = [...new Set(MENU.map((i) => i.category))];
+
+const CATALOG = new Map();
+MENU.forEach((item) => {
+  if (item.variants) item.variants.forEach((v) => CATALOG.set(item.id + '|' + v.label, { key: item.id + '|' + v.label, name: item.name + ' (' + v.label + ')', price: v.price }));
+  else CATALOG.set(item.id, { key: item.id, name: item.name, price: item.price });
+});
+OFFERS.forEach((o) => CATALOG.set(o.id, { key: o.id, name: o.name, price: o.price }));
+if (window.PHOTOS) {
+  OFFERS.forEach((o) => { if (PHOTOS[o.photo]) o.photo = PHOTOS[o.photo]; });
+  const heroImg = document.getElementById('hero-logo');
+  if (heroImg && PHOTOS['mood-logo.jpg']) heroImg.src = PHOTOS['mood-logo.jpg'];
+}
+
+const state = { cart: [], method: 'delivery', showPreview: false };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const qtyOf = (key) => { const l = state.cart.find((l) => l.key === key); return l ? l.qty : 0; };
+const cartItems = () => state.cart.map((line) => ({ line, entry: CATALOG.get(line.key) })).filter((x) => x.entry);
+
+function addItem(key) {
+  const found = state.cart.find((l) => l.key === key);
+  if (found) found.qty += 1; else state.cart.push({ key, qty: 1, note: '' });
+  render();
+}
+function removeItem(key) {
+  const found = state.cart.find((l) => l.key === key);
+  if (found) found.qty -= 1;
+  state.cart = state.cart.filter((l) => l.qty > 0);
+  render();
+}
+function setNote(key, note) {
+  const found = state.cart.find((l) => l.key === key);
+  if (found) found.note = note;
+  renderOrderArea();
+}
+
+function qtyControl(key, label) {
+  const qty = qtyOf(key);
+  if (qty === 0) {
+    return '<button type="button" class="add" data-add="' + esc(key) + '">' + (label ? esc(label) + ' · أضف' : 'أضف') + '</button>';
+  }
+  return '<div class="variant-active">' +
+    (label ? '<span class="variant-label">' + esc(label) + '</span>' : '') +
+    '<div class="stepper" dir="ltr">' +
+    '<button type="button" aria-label="زود" data-add="' + esc(key) + '">+</button>' +
+    '<span>' + qty + '</span>' +
+    '<button type="button" aria-label="قلل" data-remove="' + esc(key) + '">−</button>' +
+    '</div></div>';
+}
+
+function scrollToId(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+function renderStatic() {
+  $('chips').innerHTML =
+    '<button type="button" class="chip" data-scroll="mat-offers">العروض</button>' +
+    CATEGORIES.map((c) => '<button type="button" class="chip" data-scroll="cat-' + esc(c) + '">' + esc(c) + '</button>').join('') +
+    '<button type="button" class="chip chip-cart" data-scroll="mat-cart" id="chip-cart">السلة</button>';
+
+  $('offers').innerHTML = OFFERS.map((o) =>
+    '<div class="offer">' +
+    '<img src="' + o.photo + '" alt="' + esc(o.detail) + '" loading="lazy">' +
+    '<div class="offer-body"><div class="item-info">' +
+    '<div class="item-head"><div class="item-name">' + esc(o.name) + '</div><div class="item-price">' + o.price + ' ج</div></div>' +
+    '<div class="item-detail">' + esc(o.detail) + '</div>' +
+    '</div><div class="item-action" data-qty="' + esc(o.id) + '"></div></div></div>'
+  ).join('');
+
+  $('menu-sections').innerHTML = CATEGORIES.map((cat) =>
+    '<section class="group" id="cat-' + esc(cat) + '">' +
+    '<div class="group-label">المنيو</div>' +
+    '<h2 class="group-heading">' + esc(cat) + '</h2>' +
+    '<div class="items">' +
+    MENU.filter((i) => i.category === cat).map((item) => {
+      let action;
+      if (item.variants) {
+        action = '<div class="variants">' + item.variants.map((v) => {
+          const key = item.id + '|' + v.label;
+          return '<span data-qty="' + esc(key) + '" data-variant-label="' + esc(v.label) + '" data-variant-price="' + v.price + '"></span>';
+        }).join('') + '</div>';
+      } else {
+        action = '<span data-qty="' + esc(item.id) + '"></span>';
+      }
+      return '<div class="item"><div class="item-info">' +
+        '<div class="item-head"><div class="item-name">' + esc(item.name) + '</div>' +
+        (item.price != null ? '<div class="item-price">' + item.price + ' ج</div>' : '') +
+        '</div>' +
+        (item.detail ? '<div class="item-detail">' + esc(item.detail) + '</div>' : '') +
+        '</div><div class="item-action">' + action + '</div></div>';
+    }).join('') +
+    '</div></section>'
+  ).join('');
+}
+
+function renderQtyControls() {
+  document.querySelectorAll('[data-qty]').forEach((el) => {
+    const key = el.getAttribute('data-qty');
+    const label = el.getAttribute('data-variant-label');
+    const price = el.getAttribute('data-variant-price');
+    const qty = qtyOf(key);
+    if (qty === 0 && label && price) {
+      el.innerHTML = '<button type="button" class="add" data-add="' + esc(key) + '">' + esc(label) + ' · ' + price + ' ج</button>';
+    } else {
+      el.innerHTML = qtyControl(key, label);
+    }
+  });
+  const count = state.cart.reduce((s, l) => s + l.qty, 0);
+  $('chip-cart').textContent = 'السلة' + (count > 0 ? ' (' + count + ')' : '');
+}
+
+function renderCart() {
+  const items = cartItems();
+  if (items.length === 0) {
+    $('cart-body').innerHTML = '<p class="empty">السلة فاضية — اختار من المنيو فوق.</p>';
+    return;
+  }
+  $('cart-body').innerHTML = '<div class="cartlines">' + items.map(({ line, entry }) =>
+    '<div class="cartline"><div class="cartline-top"><div class="item-info">' +
+    '<div class="item-name">' + esc(entry.name) + '</div>' +
+    '<div class="item-detail">' + entry.price + ' ج × ' + line.qty + ' = ' + entry.price * line.qty + ' ج</div>' +
+    '</div><div class="stepper" dir="ltr">' +
+    '<button type="button" aria-label="زود" data-add="' + esc(line.key) + '">+</button>' +
+    '<span>' + line.qty + '</span>' +
+    '<button type="button" aria-label="قلل" data-remove="' + esc(line.key) + '">−</button>' +
+    '</div></div>' +
+    '<div class="field" style="margin-bottom:0"><label>ملاحظة على الصنف (اختياري)</label>' +
+    '<input type="text" data-note="' + esc(line.key) + '" value="' + esc(line.note) + '"></div>' +
+    '</div>'
+  ).join('') + '</div>';
+}
+
+function currentMessage() {
+  const items = cartItems();
+  const subtotal = items.reduce((s, { line, entry }) => s + entry.price * line.qty, 0);
+  const fee = state.method === 'delivery' && items.length > 0 ? DELIVERY_FEE : 0;
+  const total = subtotal + fee;
+  const name = $('f-name').value.trim(), phone = $('f-phone').value.trim(), address = $('f-address').value.trim();
+  const lines = ['طلب جديد من صفحة MOOD Fried Chicken & Burger', '', 'الأصناف:'];
+  items.forEach(({ line, entry }, i) => {
+    lines.push((i + 1) + '. ' + entry.name + ' ×' + line.qty + ' — ' + entry.price * line.qty + ' ج');
+    if (line.note.trim()) lines.push('   ملاحظة: ' + line.note.trim());
+  });
+  lines.push('', '----------', 'إجمالي الأصناف: ' + subtotal + ' ج');
+  if (state.method === 'delivery') lines.push('رسوم التوصيل: ' + fee + ' ج');
+  lines.push('الإجمالي: ' + total + ' ج', '', 'الاسم: ' + name, 'الموبايل: ' + phone);
+  lines.push('طريقة الاستلام: ' + (state.method === 'delivery' ? 'توصيل' : 'استلام من المطعم'));
+  if (state.method === 'delivery') lines.push('العنوان: ' + address);
+  return { text: lines.join('\n'), subtotal, fee, total, name, phone, address, count: items.length };
+}
+
+function renderOrderArea() {
+  const m = currentMessage();
+  $('totals').hidden = m.count === 0;
+  $('t-sub').textContent = m.subtotal + ' ج';
+  $('t-fee-row').style.display = state.method === 'delivery' ? '' : 'none';
+  $('t-fee').textContent = m.fee + ' ج';
+  $('t-total').textContent = m.total + ' ج';
+  $('f-address-wrap').style.display = state.method === 'delivery' ? '' : 'none';
+
+  const phoneDigits = m.phone.replace(/[^0-9٠-٩]/g, '');
+  const valid = m.count > 0 && m.name.length > 0 && phoneDigits.length >= 8 && (state.method === 'pickup' || m.address.length > 0);
+  const btn = $('order-btn');
+  if (valid) {
+    btn.removeAttribute('disabled');
+    btn.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(m.text);
+    btn.textContent = 'ابعت الطلب على واتساب ↗';
+  } else {
+    btn.setAttribute('disabled', '');
+    btn.removeAttribute('href');
+    btn.textContent = m.count === 0 ? 'السلة فاضية' : 'كمّل بياناتك الأول';
+  }
+  $('preview-toggle').hidden = m.count === 0;
+  $('preview-toggle').textContent = state.showPreview ? 'خبّي نص الرسالة' : 'شوف نص الرسالة';
+  $('preview').hidden = !state.showPreview || m.count === 0;
+  if (state.showPreview && m.count > 0) $('preview').textContent = m.text;
+}
+
+function render() {
+  renderQtyControls();
+  renderCart();
+  renderOrderArea();
+}
+
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-add],[data-remove],[data-scroll],#preview-toggle,#method button');
+  if (!t) return;
+  if (t.hasAttribute('data-add')) addItem(t.getAttribute('data-add'));
+  else if (t.hasAttribute('data-remove')) removeItem(t.getAttribute('data-remove'));
+  else if (t.hasAttribute('data-scroll')) scrollToId(t.getAttribute('data-scroll'));
+  else if (t.id === 'preview-toggle') { state.showPreview = !state.showPreview; renderOrderArea(); }
+  else if (t.closest('#method')) {
+    state.method = t.getAttribute('data-v');
+    document.querySelectorAll('#method button').forEach((b) => b.classList.toggle('on', b === t));
+    renderOrderArea();
+  }
+});
+document.addEventListener('input', (e) => {
+  const t = e.target;
+  if (t.hasAttribute && t.hasAttribute('data-note')) setNote(t.getAttribute('data-note'), t.value);
+  else if (['f-name', 'f-phone', 'f-address'].includes(t.id)) renderOrderArea();
+});
+$('order-btn').addEventListener('click', (e) => { if ($('order-btn').hasAttribute('disabled')) e.preventDefault(); });
+
+renderStatic();
+render();
+</script>
+</body>
+  </html>
